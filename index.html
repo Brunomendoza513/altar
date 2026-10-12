@@ -562,4 +562,24 @@ function closeWelcome() { $('#bienvenida').hidden = true; try { localStorage.set
 let visto = false;
 try { visto = !!localStorage.getItem(WKEY); } catch (e) {}
 $('#bienvenida').hidden = visto;
+</script><script>
+(function () {
+  var copiar = document.querySelector('[data-act="copy"]');
+  if (!copiar) return;
+  var b = document.createElement('button');
+  b.className = 'btn ghost';
+  b.type = 'button';
+  b.textContent = 'Compartir';
+  copiar.insertAdjacentElement('afterend', b);
+  b.addEventListener('click', function () {
+    var p = document.querySelector('#estampa .prayer');
+    var txt = (p ? p.textContent.trim() : 'Altar de la Santa Muerte') +
+      '\n\n🕯️ Enciende tu vela: https://brunomendoza513.github.io/altar/';
+    if (navigator.share) {
+      navigator.share({ text: txt }).catch(function () {});
+    } else {
+      window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank');
+    }
+  });
+})();
 </script>
