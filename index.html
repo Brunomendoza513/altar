@@ -1,4 +1,14 @@
-<title>Altar Santa Muerte</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#110c14">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script><title>Altar Santa Muerte</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=IM+Fell+DW+Pica:ital@0;1&family=IM+Fell+DW+Pica+SC&display=swap">
